@@ -11,7 +11,7 @@ public class Group : IEnumerable<Student> {
 	public int MaxCount { init; get; }
 	
 	private int _index = 0;
-	public int Count => _index + 1;
+	public int Count => _index;
 	
 	public Group(int minCount, int maxCount, string title) {
 		Title = title;

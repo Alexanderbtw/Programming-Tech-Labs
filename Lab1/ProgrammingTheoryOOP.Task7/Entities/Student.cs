@@ -1,3 +1,3 @@
 ﻿namespace ProgrammingTheoryOOP.Task7.Entities;
 
-public record class Student(string Name, string Surname, DateOnly DateOfReceipt);
+public record class Student(string Name, string Surname, DateOnly DateOfReceipt = new());

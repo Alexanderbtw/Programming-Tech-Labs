@@ -21,6 +21,7 @@ public class Table : IEnumerable<Entity> {
 	public int MinEdge => Math.Min(Length, Width);
 	public int MaxEdge => Math.Max(Length, Width);
 	public int Area => Length * Width;
+	public decimal TotalCost =>  _entities.Keys.Sum(e => e.Cost);
 
 	public void Put(Entity entity) {
 		if (entity.MinEdge > this.MinEdge || entity.MinSurface > this.Area) {
@@ -33,7 +34,7 @@ public class Table : IEnumerable<Entity> {
 			_freeSpace = backupFreeSpace;
 			while (i < _freeSpace.Length && _freeSpace[i] >= entity.MinSurface / entity.MinEdge ) {
 				_freeSpace[i++] -= entity.MinSurface / entity.MinEdge;
-				if (fillAmount-- == 0) {
+				if (--fillAmount == 0) {
 					_entities.Add(entity, i - entity.MinEdge);
 					return;
 				}
@@ -60,7 +61,7 @@ public class Table : IEnumerable<Entity> {
 	    }
 	    return true;
     }
-    
+
     public Entity? Find(string title) {
 		return _entities.Keys.FirstOrDefault(e => e.Title == title);
     }
