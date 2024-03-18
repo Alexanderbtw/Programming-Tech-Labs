@@ -51,6 +51,7 @@ public class Table : IEnumerable<Entity> {
 		for (int i = 0; i < entity.MinEdge; i++) {
 			_freeSpace[startPos + i] += entity.MinSurface / entity.MinEdge;
 		}
+		_entities.Remove(entity);
 	}
 	
     public bool TryTake(Entity entity) {
