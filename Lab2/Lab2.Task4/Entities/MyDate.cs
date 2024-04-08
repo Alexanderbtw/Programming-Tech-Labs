@@ -92,7 +92,6 @@ public class MyDate
         
         for (int i = pattern.Length - 1; i >= 0 ; i--)
         {
-            
             switch (pattern[i])
             {
                 case 'd':
@@ -131,5 +130,3 @@ public class MyDate
         return sb.ToString();
     }
 }
-
-public record MySimpleDate(int Day, int Month, int Year);
