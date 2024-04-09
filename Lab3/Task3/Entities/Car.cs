@@ -2,7 +2,7 @@
 
 namespace Task3.Entities;
 
-public class Car : IStatement<CarState>
+public class Car : IStateful<CarState>
 {
     public CarState State { get; set; }
 

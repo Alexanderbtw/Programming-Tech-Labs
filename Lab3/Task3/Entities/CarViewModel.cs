@@ -4,7 +4,7 @@ using Task3.Interfaces;
 
 namespace Task3.Entities;
 
-public sealed class CarViewModel(IStatement<CarState> car) : INotifyPropertyChanged
+public sealed class CarViewModel(IStateful<CarState> car) : INotifyPropertyChanged
 {
     public string State => Enum.GetName(car.State)!;
 

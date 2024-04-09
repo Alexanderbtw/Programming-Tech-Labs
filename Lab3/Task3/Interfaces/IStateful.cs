@@ -1,6 +1,6 @@
 ﻿namespace Task3.Interfaces;
 
-public interface IStatement<T>
+public interface IStateful<T>
 {
     T State { get; set; }
 }

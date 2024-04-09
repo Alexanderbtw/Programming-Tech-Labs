@@ -3,11 +3,11 @@ using Task3.Interfaces;
 
 namespace Task3.Entities.Decorators;
 
-public class CarDecorator : IStatement<CarState>
+public class CarDecorator : IStateful<CarState>
 {
-    private IStatement<CarState> _car { get; }
+    private IStateful<CarState> _car { get; }
     private ILogger _logger { get; }
-    public CarDecorator(IStatement<CarState> car, ILogger logger)
+    public CarDecorator(IStateful<CarState> car, ILogger logger)
     {
         _car = car;
         _logger = logger;
